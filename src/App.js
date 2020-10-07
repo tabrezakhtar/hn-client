@@ -24,6 +24,10 @@ function App() {
     fetchData();
   }, []);
 
+  if(error) {
+    return <div>{error}</div>
+  }
+
   if (loading) {
     return <div>Loading</div>
   }

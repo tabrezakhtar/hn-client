@@ -1,13 +1,8 @@
 import React from 'react';
 
-function StoriesList({stories, error}) {
-
-  if(error) {
-    return <li>{error}</li>
-  }
-
+function StoriesList({stories}) {
   return stories.length ? stories.map(story => 
-    <li key={story.objectID}>{story.title}</li>
+    <li key={story.objectID}><a href={story.url}>{story.title}</a></li>
   ) : null;
 }
 
