@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import StoriesList from './stories/StoriesList';
 
 const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&page=0';
-const STORY = 'https://hn.algolia.com/api/v1/items/24705414';
+
 function App() {
 
   const [stories, setStories] = useState([]);

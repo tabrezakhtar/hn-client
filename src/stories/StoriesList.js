@@ -1,8 +1,9 @@
 import React from 'react';
+import Story from './Story';
 
 function StoriesList({stories}) {
   return stories.length ? stories.map(story => 
-    <li key={story.objectID}><a href={story.url}>{story.title}</a></li>
+    <Story story={story} />
   ) : null;
 }
 
