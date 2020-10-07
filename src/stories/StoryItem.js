@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-function Story({story, index}) {
+function StoryItem({story, index}) {
   const formattedDate = moment(story.created_at).fromNow();
 
   return <li className="collection-item">
@@ -14,4 +14,4 @@ function Story({story, index}) {
   </li>;
 }
 
-export default Story;
+export default StoryItem;

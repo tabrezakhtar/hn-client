@@ -1,9 +1,9 @@
 import React from 'react';
-import Story from './Story';
+import StoryItem from './StoryItem';
 
 function StoriesList({stories}) {
   const storiesList = stories.length ? stories.map((story, index) => 
-    <Story key={story.objectID} story={story} index={index}/>
+    <StoryItem key={story.objectID} story={story} index={index}/>
   ) : null;
 
   return <ul className="collection">{storiesList}</ul>
