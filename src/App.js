@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import ShowsList from './shows/ShowsList';
+import StoriesList from './stories/StoriesList';
 
-const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story';
+const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story&page=0';
 const STORY = 'https://hn.algolia.com/api/v1/items/24705414';
 function App() {
 
@@ -13,8 +13,8 @@ function App() {
     const fetchData = async () => {
       try {
         const result = await fetch(TOP_STORIES);
-        const stories = await result.json()
-        setStories(stories);
+        const {hits} = await result.json()
+        setStories(hits);
         setLoading(false)
       } catch(error) {
         setError(error.message);
@@ -28,7 +28,7 @@ function App() {
     return <div>Loading</div>
   }
 
-  return <StoriesList shows={stories} />
+  return <StoriesList stories={stories} />
 }
 
 export default App;

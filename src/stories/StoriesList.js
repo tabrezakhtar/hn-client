@@ -7,7 +7,7 @@ function StoriesList({stories, error}) {
   }
 
   return stories.length ? stories.map(story => 
-    
+    <li key={story.objectID}>{story.title}</li>
   ) : null;
 }
 
