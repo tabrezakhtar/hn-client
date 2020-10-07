@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import StoriesList from './stories/StoriesList';
 
-const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story';
+// const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story';
+const FRONT_PAGE = 'https://hn.algolia.com/api/v1/search?tags=front_page';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetch(TOP_STORIES + '&page=' + pageNum);
+        const result = await fetch(FRONT_PAGE + '&page=' + pageNum);
         const {hits} = await result.json()
         setStories(hits);
         setLoading(false)
