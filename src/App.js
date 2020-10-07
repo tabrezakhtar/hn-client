@@ -35,7 +35,6 @@ function App() {
 
   return (
     <React.Fragment>
-      
       <StoriesList stories={stories} />
     </React.Fragment>
   );
