@@ -6,7 +6,7 @@ const TOP_STORIES = 'https://hn.algolia.com/api/v1/search_by_date?tags=story';
 function App() {
 
   const [stories, setStories] = useState([]);
-  const [pageNum, setPageNum] = useState(0);
+  const [pageNum] = useState(0);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
 

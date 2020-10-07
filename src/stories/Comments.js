@@ -40,15 +40,21 @@ function Comments() {
 
   const formattedDate = moment(story.created_at).fromNow();
 
-  return <div class="card horizontal">
-    <div class="card-stacked">
-      <div class="card-content">
+  const commentsList = story.children.map(comment => <div key={comment.id} className="collection-item">
+    <p className="grey lighten-4" dangerouslySetInnerHTML={{__html: comment.text}} />
+    <span className="story__time chip orange lighten-4">{moment(comment.created_at).fromNow()}</span>
+    <span className="comments__number chip grey lighten-5">{story.author}</span>
+  </div>);
+
+  return <div className="card horizontal">
+    <div className="card-stacked">
+      <div className="card-content">
         <a className="story__link" href={story.url}>{story.title}</a>
         <span className="story__time chip orange lighten-4">{formattedDate}</span>
         <span className="comments__number right chip grey lighten-5">{story.children.length} comments</span>
       </div>
-      <div class="card-action">
-        
+      <div className="card-action">
+        {commentsList}
       </div>
     </div>
   </div>

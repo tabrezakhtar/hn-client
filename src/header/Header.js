@@ -4,7 +4,7 @@ function Header() {
   return (
     <nav>
       <div className="nav-wrapper">
-        <span className="brand-logo">Hacker News Reader</span>
+        <a href="/" className="brand-logo">Hacker News Reader</a>
         <form>
           <div className="input-field right">
             <input id="search" type="search" required placeholder="Search..."/>
